@@ -1,20 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// App.js
 
-export default function App() {
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import PlayerList from "./src/components/PlayerList";
+
+const App = () => {
+  const players = [
+    { id: 1, name: "Mustafa Kendigüzel", initials: "MK" },
+    { id: 2, name: "Fatih Güzel", initials: "FG" },
+    { id: 3, name: "Sefa Enes Karahan", initials: "SEK" },
+    { id: 4, name: "Sude Kendigüzel", initials: "SK" },
+  ];
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <PlayerList players={players} />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 20,
   },
 });
+
+export default App;
